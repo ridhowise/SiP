@@ -17,6 +17,10 @@ header {
       position: relative;
       overflow: hidden;
 }
+.fa {
+  margin-left: -12px;
+  margin-right: 8px;
+}
 
 .content {
       width: 94%;

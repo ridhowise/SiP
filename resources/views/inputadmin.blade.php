@@ -40,12 +40,12 @@
                     <input type="text" class="form-control" name="password" >
                   </div>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label class="control-label col-sm-2">Foto:</label>
                   <div class="col-sm-10">
                     <input type="file" name="foto">
                   </div>
-                </div>
+                </div> -->
                 <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-default">Submit</button>

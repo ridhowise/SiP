@@ -25,23 +25,7 @@ class adminController extends BaseController
 
 public function simpanadmin(Request $request)
 {
-    $file = Input::file('foto');
-    $valfile = array('image' => $file);
-    $valrules = array('image' => 'image');
-
-    $validator = Validator::make($valfile, $valrules);
-    if ($validator->fails()) {
-        return redirect()->action('adminController@admin')->with('style', 'danger')->with('alert', 'Gagal Di Upload ! ')->with('msg', 'Cek Tipe File');
-    }else{
-        $destinationPath = 'uploads';
-        $size = $file->getSize();
-        $extension = $file->getClientOriginalExtension();
-        $fileName = $file->getClientOriginalName();
-        $upload_success = $file->move($destinationPath, $fileName);
-
-
-        if ($upload_success){
-
+    
           if (! function_exists('bcrypt')) {
     /**
      * Hash the given value against the bcrypt algorithm.
@@ -60,7 +44,7 @@ public function simpanadmin(Request $request)
             $bio->jabatan = $request->input('jabatan');
             $bio->email = $request->input('email');
             $bio->password = bcrypt ($request->input('password'));
-            $bio->foto = $fileName;
+            // $bio->foto = $fileName;
 
             $bio->save();
 
@@ -68,8 +52,8 @@ public function simpanadmin(Request $request)
 
 
 }
-}
-}
+
+
 
 public function getEdit($id)
 {
